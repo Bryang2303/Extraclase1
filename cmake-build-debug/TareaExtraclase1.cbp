@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/bryang2303/CLionProjects/TareaExtraclase1/Node.cpp">
+			<Option target="TareaExtraclase1"/>
+		</Unit>
+		<Unit filename="/home/bryang2303/CLionProjects/TareaExtraclase1/Node.h">
+			<Option target="TareaExtraclase1"/>
+		</Unit>
 		<Unit filename="/home/bryang2303/CLionProjects/TareaExtraclase1/main.cpp">
 			<Option target="TareaExtraclase1"/>
 		</Unit>
