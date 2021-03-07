@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/bryang2303/CLionProjects/TareaExtraclase1/Collector.cpp" "/home/bryang2303/CLionProjects/TareaExtraclase1/cmake-build-debug/CMakeFiles/TareaExtraclase1.dir/Collector.cpp.o"
+  "/home/bryang2303/CLionProjects/TareaExtraclase1/List.cpp" "/home/bryang2303/CLionProjects/TareaExtraclase1/cmake-build-debug/CMakeFiles/TareaExtraclase1.dir/List.cpp.o"
   "/home/bryang2303/CLionProjects/TareaExtraclase1/Node.cpp" "/home/bryang2303/CLionProjects/TareaExtraclase1/cmake-build-debug/CMakeFiles/TareaExtraclase1.dir/Node.cpp.o"
   "/home/bryang2303/CLionProjects/TareaExtraclase1/main.cpp" "/home/bryang2303/CLionProjects/TareaExtraclase1/cmake-build-debug/CMakeFiles/TareaExtraclase1.dir/main.cpp.o"
   )

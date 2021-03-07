@@ -1,15 +1,34 @@
 //
-// Created by bryang2303 on 2/3/21.
+// Created by bryang2303 on 3/3/21.
 //
+
 #include "Node.h"
-#include <iostream>
-using namespace std;
+
+// Constructor por defecto
+template<typename T>
+
+Node<T>::Node()
+{
+    data = NULL;
+    next = NULL;
+}
+
+// Constructor por parámetro
+template<typename T>
+Node<T>::Node(T data_)
+{
+    data = data_;
+    next = NULL;
+}
 
 
-Node::Node(int valor, int siguiente) {
-    valor = valor;
-    siguiente = siguiente;
+// Imprimir un Nodo
+template<typename T>
+void Node<T>::print()
+{
+    //cout << "Node-> " << "Dato: " << dato << " Direcion: " << this << " Siguiente: " << next << endl;
+    cout << &data << "-> ";
 }
-void Node::MostrarValor() {
-    cout << "funciona" << endl;
-}
+
+template<typename T>
+Node<T>::~Node() {}

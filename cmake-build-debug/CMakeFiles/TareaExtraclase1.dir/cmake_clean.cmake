@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/TareaExtraclase1.dir/Collector.cpp.o"
+  "CMakeFiles/TareaExtraclase1.dir/List.cpp.o"
   "CMakeFiles/TareaExtraclase1.dir/Node.cpp.o"
   "CMakeFiles/TareaExtraclase1.dir/main.cpp.o"
   "TareaExtraclase1"

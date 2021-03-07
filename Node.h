@@ -1,17 +1,27 @@
 //
-// Created by bryang2303 on 2/3/21.
+// Created by bryang2303 on 3/3/21.
 //
 
-#ifndef TAREAEXTRACLASE1_NODE_H
-#define TAREAEXTRACLASE1_NODE_H
+#ifndef NODE_H
+#define NODE_H
 
-class Node {
-private:
-    int valor{};
-    int siguiente{};
+#include <iostream>
+
+using namespace std;
+
+template <class T>
+
+class Node
+{
 public:
-    Node(int valor, int siguiente);
-    void MostrarValor();
+    Node();
+    Node(T);
+    ~Node();
+
+    Node *next;
+    T data;
+
+    void print();
 };
 
-#endif //TAREAEXTRACLASE1_NODE_H
+#endif // NODE_H
