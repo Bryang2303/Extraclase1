@@ -23,11 +23,14 @@ public:
     Collector();
     ~Collector();
 
-    void Delete(T);
-    void del_by_data(T);
+    void Delete(Node<T>*,T);
+    void New(T);
+    auto get_Head();
+    auto get_nodeE();
     void print();
 
 private:
+    Node<T> *nodoE;
     Node<T> *m_head;
     int m_num_nodes;
 };

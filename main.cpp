@@ -6,12 +6,12 @@
 #include "List.cpp"
 #include "Collector.h"
 #include "Collector.cpp"
+
 using namespace std;
 
 int main()
 {
     List<int> list_1;
-
     Collector<int> list_2;
 
     int ele;
@@ -19,28 +19,36 @@ int main()
     cout << "Lista A al inicio " << endl;
     list_1.print();
 
-    cout << "Agrega un elemento por la cabeza: " << endl;
-    cin >> ele;
-    list_1.add_head(ele);
-    list_1.print();
+    do {
+        cout << "Seleccione la accion que desea realizar: " << endl;
+        cout << "1: agregar un elemento a la lista " << endl;
+        cout << "2: eliminar un elemento de la lista " << endl;
+        cout << "0: cerrar programa  " << endl;
 
-    cout << "Agrega un elemento por la cabeza: " << endl;
-    cin >> ele;
-    list_1.add_head(ele);
-    list_1.print();
+        cin >> ele;
+        if (ele==1){
+            cout << "Ingrese el valor a agregar a la lista" << endl;
+            cin >> ele;
+            if (!list_2.get_Head()){
+                list_1.New(ele);
+                list_1.print();
 
-    cout << "Agrega un elemento por la cabeza: " << endl;
-    cin >> ele;
-    list_1.add_head(ele);
-    list_1.print();
+            } else {
+                cout << "El queeeeeee "<< list_2.get_Head() << endl;
 
-    cout << "Elimina un elemento de la lista: " << endl;
-    cin >> ele;
-    list_1.del_by_data(ele);
-    list_1.print();
-    //list_2.Delete();
+            }
 
+        } else if (ele==2){
+            cout << "Elimina un elemento de la lista: " << endl;
+            cin >> ele;
+            list_1.Delete(ele);
+            list_2.Delete(list_1.get_nodeE(),list_1.get_nodeE()->data);
+            list_2.print();
+            list_1.print();
+        }
 
+    } while (ele!=0);
+    cout << "Programa finalizado" << endl;
 
 
     return 0;

@@ -1,6 +1,9 @@
 //
 // Created by bryang2303 on 3/3/21.
 //
+//
+// Created by bryang2303 on 3/3/21.
+//
 
 #ifndef LIST_H
 #define LIST_H
@@ -23,11 +26,13 @@ public:
     List();
     ~List();
 
-    void add_head(T);
-    void del_by_data(T);
+    void New(T);
+    void Delete(T);
+    auto get_nodeE();
     void print();
 
 private:
+    Node<T> *nodoE;
     Node<T> *m_head;
     int m_num_nodes;
 };

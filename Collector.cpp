@@ -12,19 +12,21 @@ Collector<T>::Collector()
 
 // Insertar al inicio
 template<typename T>
-void Collector<T>::Delete(T data_)
+void Collector<T>::Delete(Node<T>* freeNode,T data_)
 {
-
-
     Node<T> *temp = m_head;
 
     if (!m_head) {
         Node<T> *new_node = new Node<T> (data_);
         m_head = new_node;
+        new_node = freeNode;
+        cout << "La poscicion de memoria (" << new_node << ") del nodo eliminado de la lista (" << data_ << ") ha sido recolectada." << endl;
     } else {
         Node<T> *new_node = new Node<T> (data_);
         new_node->next = m_head;
         m_head = new_node;
+        new_node = freeNode;
+        cout << "La poscicion de memoria (" << new_node << ") del nodo eliminado de la lista (" << data_ << ") ha sido recolectada" << endl;
 
         while (temp) {
             temp = temp->next;
@@ -50,9 +52,14 @@ void Collector<T>::print()
     cout << endl << endl;
 }
 
+template<typename T>
+auto Collector<T>::get_Head() {
+    return m_head;
+}
+
 // Eliminar por data del nodo
 template<typename T>
-void Collector<T>::del_by_data(T data_) {
+void Collector<T>::New(T data_) {
     Node<T> *temp = m_head;
     Node<T> *temp1 = m_head->next;
 
