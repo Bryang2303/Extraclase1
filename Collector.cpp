@@ -7,26 +7,33 @@ template<typename T>
 Collector<T>::Collector()
 {
     m_num_nodes = 0;
-    m_head = NULL;
+    head = NULL;
 }
 
 // Insertar al inicio
 template<typename T>
 void Collector<T>::Delete(Node<T>* freeNode,T data_)
 {
-    Node<T> *temp = m_head;
+    Node<T> *temp = head;
+    Node<T> *new_node = new Node<T> (data_);
+    if (!head) {
+        freeNode->next=NULL;
+        new_node = freeNode;
+        //freeNode = new_node;
+        head = new_node;
+        //cout << "HEAD " << head << " Data del head " << head->data << endl;
+        cout << "La poscicion de memoria (" << freeNode << ") del nodo eliminado de la lista (" << freeNode->next << ") ha sido recolectada." << endl;
 
-    if (!m_head) {
-        Node<T> *new_node = new Node<T> (data_);
-        m_head = new_node;
-        new_node = freeNode;
-        cout << "La poscicion de memoria (" << new_node << ") del nodo eliminado de la lista (" << data_ << ") ha sido recolectada." << endl;
     } else {
-        Node<T> *new_node = new Node<T> (data_);
-        new_node->next = m_head;
-        m_head = new_node;
+
         new_node = freeNode;
-        cout << "La poscicion de memoria (" << new_node << ") del nodo eliminado de la lista (" << data_ << ") ha sido recolectada" << endl;
+        new_node->next = head;
+        //freeNode->next = head;
+        //new_node = freeNode;
+        head = new_node;
+
+        //cout << "HEAD " << head << " Data del head " << head->data << endl;
+        cout << "La poscicion de memoria (" << freeNode << ") del nodo eliminado de la lista (" << freeNode->next << ") ha sido recolectada" << endl;
 
         while (temp) {
             temp = temp->next;
@@ -39,8 +46,8 @@ void Collector<T>::Delete(Node<T>* freeNode,T data_)
 template<typename T>
 void Collector<T>::print()
 {
-    Node<T> *temp = m_head;
-    if (!m_head) {
+    Node<T> *temp = head;
+    if (!head) {
         cout << "La Lista está vacía " << endl;
     } else {
         while (temp) {
@@ -54,32 +61,38 @@ void Collector<T>::print()
 
 template<typename T>
 auto Collector<T>::get_Head() {
-    return m_head;
+    return head;
+}
+template<typename T>
+auto Collector<T>::get_nodeE() {
+    return nodoE;
+}
+
+template<typename T>
+void Collector<T>::set_Head(Node<T> *newhead) {
+    head = newhead;
+}
+template<typename T>
+void Collector<T>::set_nodeE(Node<T> *newNodeE) {
+    nodoE = newNodeE;
 }
 
 // Eliminar por data del nodo
 template<typename T>
-void Collector<T>::New(T data_) {
-    Node<T> *temp = m_head;
-    Node<T> *temp1 = m_head->next;
+void Collector<T>::New() {
+    Node<T> *temp = head;
+    Node<T> *temp1 = head->next;
 
     int cont = 0;
+    nodoE = head->next;
 
-    if (m_head->data == data_) {
-        m_head = temp->next;
-    } else {
-        while (temp1) {
-            if (temp1->data == data_) {
-                Node<T> *aux_node = temp1;
-                temp->next = temp1->next;
-                delete aux_node;
-                cont++;
-                m_num_nodes--;
-            }
-            temp = temp->next;
-            temp1 = temp1->next;
-        }
+    if (head==head) {
+        nodoE = head;
+        head = temp->next;
+
     }
+
+
 }
 
 template<typename T>

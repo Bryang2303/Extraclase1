@@ -11,7 +11,7 @@ template<typename T>
 List<T>::List()
 {
     m_num_nodes = 0;
-    m_head = NULL;
+    head = NULL;
     nodoE = NULL;
 }
 
@@ -19,19 +19,46 @@ List<T>::List()
 template<typename T>
 void List<T>::New(T data_)
 {
-    cout << nodoE << endl;
+    cout << "nodo E EEEEESSS " << nodoE << endl;
 
-    Node<T> *temp = m_head;
-
-    if (!m_head) {
-        Node<T> *new_node = new Node<T> (data_);
-        cout << new_node << endl;
-        m_head = new_node;
+    Node<T> *temp = head;
+    Node<T> *new_node = new Node<T> (data_);
+    if (!head) {
+        cout << "DOOS" << new_node << endl;
+        head = new_node;
     } else {
-        Node<T> *new_node = new Node<T> (data_);
-        new_node->next = m_head;
-        cout << new_node << endl;
-        m_head = new_node;
+        new_node->next = head;
+
+        cout << "TREES" << new_node << endl;
+        head = new_node;
+
+        while (temp) {
+            temp = temp->next;
+        }
+    }
+    m_num_nodes++;
+}
+
+// Insertar al inicio
+template<typename T>
+void List<T>::New(Node<T>* newPtr,T data_)
+{
+
+    Node<T> *temp = head;
+
+    if (!head) {
+        Node<T> *new_node2 = new Node<T> (data_);
+        new_node2 = newPtr;
+        new_node2->data = data_;
+        cout << "UNOO" << new_node2 << endl;
+        head = new_node2;
+    } else {
+        Node<T> *new_node2 = new Node<T> (data_);
+        new_node2 = newPtr;
+        new_node2->data = data_;
+        new_node2->next = head;
+        cout << "UNOO" << new_node2 << endl;
+        head = new_node2;
 
         while (temp) {
             temp = temp->next;
@@ -44,8 +71,8 @@ void List<T>::New(T data_)
 template<typename T>
 void List<T>::print()
 {
-    Node<T> *temp = m_head;
-    if (!m_head) {
+    Node<T> *temp = head;
+    if (!head) {
         cout << "La Lista está vacía " << endl;
     } else {
         while (temp) {
@@ -65,15 +92,15 @@ auto List<T>::get_nodeE() {
 // Eliminar por data del nodo
 template<typename T>
 void List<T>::Delete(T data_) {
-    Node<T> *temp = m_head;
-    Node<T> *temp1 = m_head->next;
+    Node<T> *temp = head;
+    Node<T> *temp1 = head->next;
 
     int cont = 0;
-    nodoE = m_head->next;
+    nodoE = head->next;
 
-    if (m_head->data == data_) {
-        nodoE = m_head;
-        m_head = temp->next;
+    if (head->data == data_) {
+        nodoE = head;
+        head = temp->next;
 
     } else {
         while (temp1) {
@@ -103,13 +130,23 @@ void List<T>::Delete(T data_) {
             cout << nodoE << endl;
             cout << nodoE->data << endl;
 
-
-
-
-
         }
     }
 }
+
+template<typename T>
+auto List<T>::get_Head() {
+    return head;
+}
+template<typename T>
+void List<T>::set_Head(Node<T> *newhead) {
+    head = newhead;
+}
+template<typename T>
+void List<T>::set_nodeE(Node<T> *newNodeE) {
+    nodoE = newNodeE;
+}
+
 
 template<typename T>
 List<T>::~List() {}

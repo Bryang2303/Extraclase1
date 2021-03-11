@@ -5,7 +5,6 @@ CMakeFiles/TareaExtraclase1.dir/Collector.cpp.o: ../Collector.cpp
 CMakeFiles/TareaExtraclase1.dir/Collector.cpp.o: ../Collector.h
 CMakeFiles/TareaExtraclase1.dir/Collector.cpp.o: ../Node.h
 
-CMakeFiles/TareaExtraclase1.dir/List.cpp.o: ../Collector.h
 CMakeFiles/TareaExtraclase1.dir/List.cpp.o: ../List.cpp
 CMakeFiles/TareaExtraclase1.dir/List.cpp.o: ../List.h
 CMakeFiles/TareaExtraclase1.dir/List.cpp.o: ../Node.cpp

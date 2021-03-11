@@ -27,13 +27,19 @@ public:
     ~List();
 
     void New(T);
+    void New(Node<T>*,T);
     void Delete(T);
+
+    auto get_Head();
     auto get_nodeE();
+    void set_Head(Node<T>*);
+    void set_nodeE(Node<T>*);
+
     void print();
 
 private:
     Node<T> *nodoE;
-    Node<T> *m_head;
+    Node<T> *head;
     int m_num_nodes;
 };
 

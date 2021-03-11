@@ -27,6 +27,10 @@ int main()
 
         cin >> ele;
         if (ele==1){
+            cout << "Lista hasta el momento: "<< endl;
+            list_1.print();
+            cout << "Recolector hasta el momento: " << endl;
+            list_2.print();
             cout << "Ingrese el valor a agregar a la lista" << endl;
             cin >> ele;
             if (!list_2.get_Head()){
@@ -34,7 +38,11 @@ int main()
                 list_1.print();
 
             } else {
-                cout << "El queeeeeee "<< list_2.get_Head() << endl;
+                auto a = list_2.get_Head();
+                list_2.New();
+                list_1.New(a,ele);
+                list_1.print();
+
 
             }
 
@@ -42,6 +50,7 @@ int main()
             cout << "Elimina un elemento de la lista: " << endl;
             cin >> ele;
             list_1.Delete(ele);
+            cout << "SIGAAAA" << endl;
             list_2.Delete(list_1.get_nodeE(),list_1.get_nodeE()->data);
             list_2.print();
             list_1.print();
