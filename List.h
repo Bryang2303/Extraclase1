@@ -1,10 +1,3 @@
-//
-// Created by bryang2303 on 3/3/21.
-//
-//
-// Created by bryang2303 on 3/3/21.
-//
-
 #ifndef LIST_H
 #define LIST_H
 
@@ -12,32 +5,28 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-
 #include "Node.h"
 #include "Node.cpp"
-
 using namespace std;
 
 template <class T>
-
 class List
 {
 public:
+    // Constructores
     List();
     ~List();
-
-    void New(T);
-    void New(Node<T>*,T);
+    // Metodos
+    void New(T);  // Sobrecarga
+    void New(Node<T>*,T); // Sobrecarga
     void Delete(T);
-
     auto get_Head();
     auto get_nodeE();
     void set_Head(Node<T>*);
     void set_nodeE(Node<T>*);
-
     void print();
-
 private:
+    // Atributos
     Node<T> *nodoE;
     Node<T> *head;
     int m_num_nodes;

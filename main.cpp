@@ -50,7 +50,7 @@ int main()
             cout << "Elimina un elemento de la lista: " << endl;
             cin >> ele;
             list_1.Delete(ele);
-            cout << "SIGAAAA" << endl;
+
             list_2.Delete(list_1.get_nodeE(),list_1.get_nodeE()->data);
             list_2.print();
             list_1.print();

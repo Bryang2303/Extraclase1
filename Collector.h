@@ -5,14 +5,10 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-
 #include "Node.h"
-
 
 #ifndef TAREAEXTRACLASE1_COLLECTOR_H
 #define TAREAEXTRACLASE1_COLLECTOR_H
-
-
 using namespace std;
 
 template <class T>
@@ -20,23 +16,22 @@ template <class T>
 class Collector
 {
 public:
+    // Constructores
     Collector();
     ~Collector();
-
+    // Metodos
     void Delete(Node<T>*,T);
     void New();
-
+    void print();
+    // Sets y Gets
     auto get_Head();
     auto get_nodeE();
     void set_Head(Node<T>*);
     void set_nodeE(Node<T>*);
-    void print();
-
+    // Atributos
 private:
     Node<T> *nodoE;
     Node<T> *head;
     int m_num_nodes;
 };
-
-
 #endif //TAREAEXTRACLASE1_COLLECTOR_H

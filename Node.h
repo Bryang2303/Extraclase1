@@ -1,23 +1,23 @@
-//
-// Created by bryang2303 on 3/3/21.
-//
-
 #ifndef NODE_H
 #define NODE_H
 
 #include <iostream>
-
 using namespace std;
 
 template <class T>
-
 class Node
 {
 public:
+    // Constructores
     Node();
     Node(T);
     ~Node();
-
+    // Metodos
+    auto get_Valor();
+    auto get_Siguiente();
+    void set_Valor(int data_);
+    void set_Siguiente(Node<T>* next_);
+    // Atributos
     Node *next;
     T data;
 
